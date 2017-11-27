@@ -35,7 +35,7 @@ filetype plugin indent on    " required
 
 "config ack vim 
 let g:ackprg = 'ag --nogroup --nocolor --column'
-map <c-u> :Ack<space>
+map <C-p> <ESC>:Ack<space>
 "end config 
 
 
