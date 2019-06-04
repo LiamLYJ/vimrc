@@ -276,6 +276,7 @@ set hlsearch
 set noexpandtab       
 set whichwrap+=<,>,h,l
 set autoread
+set clipboard=unnamedplus
 
 autocmd! BufWritePost $MYVIMRC source $MYVIMRC
 
