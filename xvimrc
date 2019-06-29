@@ -1,0 +1,56 @@
+set nocompatible              " required
+filetype off                  " required
+
+
+
+#colorschem colorful256 
+
+set clipboard=unnamedplus
+
+set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h13
+set enc=utf-8
+set number                        
+set showtabline=0                
+set guioptions-=r                
+set guioptions-=L               
+set guioptions-=b               
+set cursorline                  
+set cursorcolumn                
+set langmenu=zh_CN.UTF-8        
+syntax on                      
+set nowrap                     
+set fileformat=unix            
+set cindent                    
+set tabstop=4                  
+set shiftwidth=4               
+set backspace+=indent,eol,start
+set showmatch                  
+set scrolloff=5                
+set laststatus=2               
+set mouse=a      
+set selection=exclusive
+set selectmode=mouse,key
+set matchtime=5
+set ignorecase                 
+set incsearch
+set hlsearch                   
+set noexpandtab       
+set whichwrap+=<,>,h,l
+set autoread
+
+autocmd! BufWritePost $MYVIMRC source $MYVIMRC
+
+" config for key mapping 
+
+"make C files and go and back on Quickfix
+autocmd FileType c,cpp  map <buffer> <leader>m :w<cr>:make<cr>
+nmap <leader>cv :cn<cr>
+nmap <leader>cx :cp<cr>
+nmap <leader>cw :cw 10<cr> 
+
+
+map! <C-a> <HOME>
+map! <C-e> <END>
+
+"end key mapping config 
+
