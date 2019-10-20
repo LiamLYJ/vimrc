@@ -161,6 +161,8 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
+bindkey "^R" history-incremental-search-backward
+
 #no beep
 setopt no_beep
 #for sharing zsh
