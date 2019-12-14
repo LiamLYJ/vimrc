@@ -175,5 +175,6 @@ setopt share_history
 export PATH=/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/bin:$PATH
 alias vim="/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/MacOS/vim"
 
-# for remind yourself 
-#open /Users/liuyongjie/Documents/.private/feelings.pages
+# proxy shortup for go-outside using shadowsocks
+alias proxy='export all_proxy=socks5://127.0.0.1:1086'
+alias unproxy='unset all_proxy'
