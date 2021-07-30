@@ -161,8 +161,6 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
-bindkey "^R" history-incremental-search-backward
-
 #no beep
 setopt no_beep
 #for sharing zsh
@@ -178,3 +176,18 @@ alias vim="/usr/local/Cellar/macvim/8.0-137_2/MacVim.app/Contents/MacOS/vim"
 # proxy shortup for go-outside using shadowsocks
 alias proxy='export all_proxy=socks5://127.0.0.1:1086'
 alias unproxy='unset all_proxy'
+
+function exists { which $1 &> /dev/null }
+
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
